@@ -52,8 +52,26 @@ void	putstr(char *strg)
     }
 }
 
+char *splitter()
+{
+    char str[] = "hello friends";
+    char *strn;
+    int i =0;
+
+    while(str[i])
+    {
+        if(str[i] < 33 && str[i])
+            i++;
+        else
+            strn[i] = str[i];
+        i++;
+    }
+    strn[i] = '\0';
+    return (strn);
+}
+
 int		main(void)
 {
-    putstr(getstr());
+    putstr(splitter());
     putstr("\n");
 }
